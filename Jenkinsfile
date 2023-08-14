@@ -11,15 +11,15 @@ pipeline {
     }
     stage('build') {
       steps {
-        sh 'mvn clean install package'
+        sh 'mvn clean package'
       }
     }
     stage('SonarQube analysis') {
       steps {
-        withSonarQubeEnv('SonarQube-9.9') {
+      withSonarQubeEnv('SonarQube-9.9') {
           sh "mvn sonar:sonar"
-        }
-      }
+       }
+     }
     }
   }
 }
