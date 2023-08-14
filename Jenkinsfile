@@ -1,7 +1,7 @@
 pipeline {
   agent any 
   environment {
-    PATH = "$PATH:/opt/maven/bin"
+    PATH ="$PATH:/opt/maven/bin"
   }
   stages {
     stage('getcode') {
